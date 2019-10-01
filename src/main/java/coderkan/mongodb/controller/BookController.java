@@ -36,7 +36,14 @@ public class BookController {
 	
 	@GetMapping("/findAllBooks")
 	public List<Book> getAllBooks(){
-		return this.bookRepository.findAll();
+		List<Book> books = this.bookRepository.findAll();
+		for (int i = 0; i < books.size(); i++) {
+			Book book = books.get(i);
+			if(book.getTemplate() != null) {
+				System.out.println("Book : " + book.getTemplate().get("someFiled"));				
+			}
+		}
+		return books;
 	}
 	
 	@GetMapping("/findAllBooks/{id}")

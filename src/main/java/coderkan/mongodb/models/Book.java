@@ -1,5 +1,7 @@
 package coderkan.mongodb.models;
 
+import java.util.Map;
+
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -15,5 +17,7 @@ public class Book {
 	private int objId;
 	private String bookName;
 	private String authorName;
+	
+	private Map<String, Object> template;
 	
 }
